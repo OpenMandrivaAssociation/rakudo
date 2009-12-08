@@ -11,7 +11,7 @@ Release:        %mkrel 1
 
 Summary:        A Perl compiler on Parrot
 License:        Artistic 2.0
-Group:          Development/Languages
+Group:          Development/Perl 
 URL:            http://www.rakudo.org/
 Source0:        http://cloud.github.com/downloads/rakudo/rakudo/rakudo-%{year}-%{month}.tar.gz
 
@@ -55,5 +55,3 @@ rm -rf %{buildroot}
 %{_bindir}/perl6
 %{parrot_dynext}
 %{par_lang_perl6}
-
-
