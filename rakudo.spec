@@ -6,7 +6,7 @@
 %define par_lang_perl6 %{_libdir}/parrot/%{parrot_version}/languages/perl6
 
 Name:           rakudo
-Version:        0.%{year}.%{month}
+Version:        %{year}.%{month}
 Release:        %mkrel 1
 
 Summary:        A Perl compiler on Parrot
