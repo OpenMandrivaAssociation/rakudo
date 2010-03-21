@@ -7,7 +7,7 @@
 
 Name:           rakudo
 Version:        %{year}.%{month}
-Release:        %mkrel 1
+Release:        %mkrel 2
 
 Summary:        A Perl compiler on Parrot
 License:        Artistic 2.0
