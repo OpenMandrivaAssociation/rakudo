@@ -1,6 +1,6 @@
 %global year 2010
-%global month 03
-%global parrot_version 2.2.0
+%global month 04
+%global parrot_version 2.3.0
 
 %define parrot_dynext  %{_libdir}/parrot/%{parrot_version}/dynext
 %define par_lang_perl6 %{_libdir}/parrot/%{parrot_version}/languages/perl6
