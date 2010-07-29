@@ -1,19 +1,17 @@
-%global year 2010
-%global month 04
-%global parrot_version 2.3.0
+%global parrot_version 2.6.0
 
 %define parrot_dynext  %{_libdir}/parrot/%{parrot_version}/dynext
 %define par_lang_perl6 %{_libdir}/parrot/%{parrot_version}/languages/perl6
 
 Name:           rakudo
-Version:        %{year}.%{month}
+Version:        2010.07
 Release:        %mkrel 1
 
 Summary:        A Perl compiler on Parrot
 License:        Artistic 2.0
 Group:          Development/Perl 
 URL:            http://www.rakudo.org/
-Source0:        http://cloud.github.com/downloads/rakudo/rakudo/rakudo-%{year}.%{month}.tar.gz
+Source0:        http://github.com/downloads/rakudo/rakudo/%{name}-%{version}.tar.gz
 
 BuildRequires:  gdbm-devel
 BuildRequires:  gmp-devel
@@ -33,7 +31,7 @@ on the Parrot VM. More information about Perl 6 is available from:
 http://perl6-projects.org
 
 %prep
-%setup -q -n %{name}-%{year}.%{month}
+%setup -q -n %{name}-%{version}
 
 %build
 %{__perl} Configure.pl
@@ -53,5 +51,6 @@ rm -rf %{buildroot}
 %defattr(-,root,root,-)
 %doc CREDITS LICENSE README
 %{_bindir}/perl6
+%{_mandir}/*
 %{parrot_dynext}
 %{par_lang_perl6}
