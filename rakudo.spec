@@ -1,10 +1,10 @@
-%global parrot_version 2.8.0
+%global parrot_version 2.11.0
 
 %define parrot_dynext  %{_libdir}/parrot/%{parrot_version}/dynext
 %define par_lang_perl6 %{_libdir}/parrot/%{parrot_version}/languages/perl6
 
 Name:           rakudo
-Version:        2010.09
+Version:        2010.12
 Release:        %mkrel 1
 
 Summary:        A Perl compiler on Parrot
