@@ -12,10 +12,10 @@ Source0:        https://rakudo.org/dl/rakudo/rakudo-%{version}.tar.gz
 
 BuildRequires:  gdbm-devel
 BuildRequires:  gmp-devel
-BuildRequires:  libicu-devel
-BuildRequires:  ncurses-devel
+BuildRequires:  pkgconfig(icu-uc)
+BuildRequires:  pkgconfig(ncursesw)
 BuildRequires:  pkgconfig(moar)
-BuildRequires:  readline-devel
+BuildRequires:  pkgconfig(readline)
 BuildRequires:	nqp
 
 %description
