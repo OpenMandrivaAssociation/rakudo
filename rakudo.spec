@@ -22,6 +22,8 @@ BuildRequires:	perl(ExtUtils::Command)
 BuildRequires:	perl(IPC::Cmd)
 BuildRequires:	perl(FindBin)
 BuildRequires:	perl(Digest::SHA)
+# For tests
+BuildRequires:	perl(Test::Harness)
 
 %description
 Rakudo Perl 6, or just Rakudo, is a Perl 6 compiler for the Moar virtual
