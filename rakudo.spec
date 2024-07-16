@@ -17,6 +17,7 @@ BuildRequires:  pkgconfig(ncursesw)
 BuildRequires:  pkgconfig(moar)
 BuildRequires:  pkgconfig(readline)
 BuildRequires:	nqp
+BuildRequires:	perl
 
 %description
 Rakudo Perl 6, or just Rakudo, is a Perl 6 compiler for the Moar virtual
@@ -28,20 +29,18 @@ http://perl6-projects.org
 %autosetup -p1
 
 %conf
-%{__perl} Configure.pl --prefix=%{_prefix} --backends=moar
+perl Configure.pl --prefix=%{_prefix} --backends=moar
 
 %build
-%make
+%make_build
 
+%if ! %{cross_compiling}
 %check
 %make test
+%endif
 
 %install
-rm -rf %{buildroot}
-%makeinstall_std
-
-%clean
-rm -rf %{buildroot}
+%make_install
 
 %files
 %defattr(-,root,root,-)
