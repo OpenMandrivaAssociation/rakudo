@@ -1,40 +1,36 @@
-%global parrot_version 2.11.0
-
-%define parrot_dynext  %{_libdir}/parrot/%{parrot_version}/dynext
-%define par_lang_perl6 %{_libdir}/parrot/%{parrot_version}/languages/perl6
+%undefine _debugsource_packages
 
 Name:           rakudo
-Version:        2010.12
-Release:        %mkrel 1
+Version:        2024.06
+Release:        1
 
 Summary:        A Perl compiler on Parrot
 License:        Artistic 2.0
 Group:          Development/Perl 
 URL:            http://www.rakudo.org/
-Source0:        http://github.com/downloads/rakudo/rakudo/%{name}-%{version}.tar.gz
+Source0:        https://rakudo.org/dl/rakudo/rakudo-%{version}.tar.gz
 
 BuildRequires:  gdbm-devel
 BuildRequires:  gmp-devel
 BuildRequires:  libicu-devel
 BuildRequires:  ncurses-devel
-BuildRequires:  parrot       >= %{parrot_version}
-BuildRequires:  parrot-devel >= %{parrot_version}
-BuildRequires:  parrot-src   >= %{parrot_version}
+BuildRequires:  pkgconfig(moar)
 BuildRequires:  readline-devel
-
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
+BuildRequires:	nqp
 
 %description
-Rakudo Perl 6, or just Rakudo, is a Perl 6 compiler for the Parrot virtual
+Rakudo Perl 6, or just Rakudo, is a Perl 6 compiler for the Moar virtual
 machine. Rakudo is an implementation of the Perl 6 specification that runs
-on the Parrot VM. More information about Perl 6 is available from:
+on the Moar VM. More information about Perl 6 is available from:
 http://perl6-projects.org
 
 %prep
-%setup -q -n %{name}-%{version}
+%autosetup -p1
+
+%conf
+%{__perl} Configure.pl --prefix=%{_prefix} --backends=moar
 
 %build
-%{__perl} Configure.pl
 %make
 
 %check
@@ -49,8 +45,10 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
-%doc CREDITS LICENSE README
 %{_bindir}/perl6
-%{_mandir}/*
-%{parrot_dynext}
-%{par_lang_perl6}
+%{_bindir}/perl6-*
+%{_bindir}/raku
+%{_bindir}/raku-*
+%{_bindir}/rakudo
+%{_bindir}/rakudo-*
+%{_datadir}/perl6
