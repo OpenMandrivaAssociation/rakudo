@@ -4,16 +4,12 @@ Name:           rakudo
 Version:        2024.06
 Release:        1
 
-Summary:        A Perl compiler on Parrot
+Summary:        A Raku compiler and runtime
 License:        Artistic 2.0
 Group:          Development/Perl 
 URL:            http://www.rakudo.org/
 Source0:        https://rakudo.org/dl/rakudo/rakudo-%{version}.tar.gz
 
-BuildRequires:  gdbm-devel
-BuildRequires:  gmp-devel
-BuildRequires:  pkgconfig(icu-uc)
-BuildRequires:  pkgconfig(ncursesw)
 BuildRequires:  pkgconfig(moar)
 BuildRequires:  pkgconfig(readline)
 BuildRequires:	nqp
@@ -26,10 +22,10 @@ BuildRequires:	perl(Digest::SHA)
 BuildRequires:	perl(Test::Harness)
 
 %description
-Rakudo Perl 6, or just Rakudo, is a Perl 6 compiler for the Moar virtual
-machine. Rakudo is an implementation of the Perl 6 specification that runs
-on the Moar VM. More information about Perl 6 is available from:
-http://perl6-projects.org
+Rakudo is a Raku compiler for the MoarVM virtual machine.
+Rakudo is an implementation of the Raku specification.
+More information about Raku is available from:
+https://raku.org
 
 %prep
 %autosetup -p1
