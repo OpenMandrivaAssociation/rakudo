@@ -7,7 +7,7 @@ Release:        1
 Summary:        A Raku compiler and runtime
 License:        Artistic 2.0
 Group:          Development/Perl 
-URL:            http://www.rakudo.org/
+URL:            https://www.rakudo.org/
 Source0:        https://rakudo.org/dl/rakudo/rakudo-%{version}.tar.gz
 
 BuildRequires:  pkgconfig(moar)
