@@ -10,6 +10,7 @@ Group:          Development/Perl
 URL:            https://www.rakudo.org/
 Source0:        https://rakudo.org/dl/rakudo/rakudo-%{version}.tar.gz
 
+BuildRequires:	make
 BuildRequires:  pkgconfig(moar)
 BuildRequires:  pkgconfig(readline)
 BuildRequires:	nqp
