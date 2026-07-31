@@ -1,7 +1,7 @@
 %undefine _debugsource_packages
 
 Name:           rakudo
-Version:        2025.04
+Version:        2026.07
 Release:        1
 
 Summary:        A Raku compiler and runtime
